@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = "mongodb://127.0.0.1:27017/lms"
+}
+
+model Contact {
+  id    String @id @default(auto()) @map("_id") @db.ObjectId
+  name  String
+}
+
+model Category {
+  id        String    @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+ slug       String
+  products  Product[] @relation("CategoryProducts")
+}
+
+model Product {
+  id          String    @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  price       Float
+  categoryId  String
+  category    Category  @relation("CategoryProducts", fields: [categoryId], references: [id])
+}

@@ -1,0 +1,41 @@
+
+
+<body>
+
+
+  <%- include('partials/header'); %>
+
+
+<main>
+  <div class="container">
+    <form action="/usersubmit" method="post" enctype="multipart/form-data">
+
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"> Name </label>
+        <input type="name" class="form-control"  placeholder="Enter Name">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"> Email </label>
+        <input type="email" class="form-control"  placeholder="Enter Email">
+      </div>
+
+      <div class="mb-3">
+        <label for="formFileSm" class="form-label">Profile Image</label>
+        <input class="form-control form-control-sm"  name="avatar"  type="file">
+      </div>
+      
+      
+      <button type="submit">Submit</button>
+  </form>
+  </div>
+</main>
+
+
+
+
+<footer>
+  <%- include('partials/footer'); %>
+</footer>
+
+

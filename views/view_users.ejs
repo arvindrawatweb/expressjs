@@ -1,0 +1,77 @@
+
+  <%- include('partials/header'); %>
+
+  <style>
+ 
+
+    h1 {
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #007bff;
+      color: white;
+      font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    td[colspan="2"] {
+      text-align: center;
+      font-style: italic;
+    }
+  </style>
+
+<main>
+    <div class="container">
+        <h1>This is great</h1>
+        <table>
+          <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+              </tr>
+          </thead>
+          <tbody>
+              <% if (users.length > 0) { %>
+                  <% users.forEach(function(user) { %>
+                      <tr>
+                          <td><%= user.name %></td>
+                          <td><%= user.email %></td>
+                      </tr>
+                  <% }); %>
+              <% } else { %>
+                  <tr>
+                      <td colspan="2">No users found</td>
+                  </tr>
+              <% } %>
+          </tbody>
+        </table>
+    </div>
+</main>
+
+
+  <%- include('partials/footer'); %>
+
+
+
+
